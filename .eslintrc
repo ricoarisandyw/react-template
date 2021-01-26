@@ -1,0 +1,43 @@
+{
+    "root": true,
+    "parser": "@typescript-eslint/parser", // specify eslint parser
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:@shopify/esnext",
+      "plugin:@shopify/prettier"
+    ],
+    "rules": {
+      "babel/object-curly-spacing":"off",
+      "no-console":"warn",
+      "no-alert":"warn",
+      "no-process-env":"warn",
+      "@typescript-eslint/no-var-requires":"warn",
+      "react/jsx-pascal-case":"warn",
+      "semi":"warn"
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "commonjs": true,
+      "jest": true
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      },
+      "react": {
+        "version": "detect"
+      }
+    },
+    "globals": {
+      "APP_ENV": true
+    }
+}
