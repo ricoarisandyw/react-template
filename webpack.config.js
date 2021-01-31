@@ -1,7 +1,7 @@
 const path = require('path')
 
 const HtmlWebPackPlugin = require('html-webpack-plugin')
-const webpack = require('webpack')
+const PreloadWebpackPlugin = require('preload-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -46,6 +46,7 @@ module.exports = {
             filename: './index.html',
             favicon: './src/images/favicon.ico',
         }),
+        new PreloadWebpackPlugin(),
     ],
     optimization: {
         splitChunks: {
@@ -53,6 +54,7 @@ module.exports = {
             chunks: 'all',
             maxInitialRequests: Infinity,
             minSize: 0,
+            maxSize: 244000,
             cacheGroups: {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,

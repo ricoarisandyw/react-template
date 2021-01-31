@@ -5,6 +5,16 @@ const webpack = require('webpack')
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin')
+const TerserPlugin = require("terser-webpack-plugin");
+const glob = require('glob-all')
+
+const PATHS = {
+  src: path.join(__dirname, '../src'),
+  html: path.join(__dirname, '../src/index.html')
+}
 
 module.exports = merge(common, {
   mode: 'production',
@@ -37,10 +47,20 @@ module.exports = merge(common, {
     new webpack.DefinePlugin({
       APP_ENV: JSON.stringify("development"),
     }),
+    new WebpackManifestPlugin({
+      fileName:"asset-manifest.json"
+    }),
   ],
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerPlugin(), "..."],
+    minimizer: [
+      new OptimizeCssAssetsPlugin(),
+      new TerserPlugin(),
+      new CssMinimizerPlugin(), 
+      new PurgecssPlugin({
+        paths: [PATHS.html, ...glob.sync(`${PATHS.src}/**/*`, { nodir: true })]
+      }),
+    ],
     // Once your build outputs multiple chunks, this option will ensure they share the webpack runtime
     // instead of having their own. This also helps with long-term caching, since the chunks will only
     // change when actual code changes, not the webpack runtime.

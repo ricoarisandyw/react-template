@@ -9,10 +9,10 @@ const SectionIntro: React.FC = () => {
                 <div className="text-center">
                     <h1>React + Webpack 5 + Bootstrap 5 + SCSS</h1>
                     <div className="d-none d-md-flex justify-content-center p-3">
-                        <img className="px-3" height="100px" src={icons.logoReact} alt="logo react" />
-                        <img className="px-3" height="100px" src={icons.logoWebpack} alt="logo react" />
-                        <img className="px-3" height="100px" src={icons.logoBootstrap} alt="logo react" />
-                        <img className="px-3" height="100px" src={icons.logoScss} alt="logo react" />
+                        <img className="px-3" height="100px" width="144px" src={icons.logoReact} alt="logo react" />
+                        <img className="px-3" height="100px" width="132px" src={icons.logoWebpack} alt="logo react" />
+                        <img className="px-3" height="100px" width="157px" src={icons.logoBootstrap} alt="logo react" />
+                        <img className="px-3" height="100px" width="132px" src={icons.logoScss} alt="logo react" />
                     </div>
                     <button className="btn btn-primary circled">
                         <FaGithubAlt className="me-1" color="white" /> Clone Repository

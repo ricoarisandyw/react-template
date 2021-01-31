@@ -1,15 +1,15 @@
 import React from 'react';
-import Footer from '../../core/Footer';
-import Header from '../../core/Header';
-import SectionIntro from './SectionIntro';
+const Footer = React.lazy(() => import('../../core/Footer'));
+const Header = React.lazy(() => import('../../core/Header'));
+const SectionIntro = React.lazy(() => import('./SectionIntro'));
 
 const MainPage: React.FC = () => {
     return (
-        <>
+        <React.Suspense fallback="loading...">
             <Header />
             <SectionIntro />
             <Footer /> 
-        </>
+        </React.Suspense>
     );
 };
 
