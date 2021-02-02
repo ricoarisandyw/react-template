@@ -21,7 +21,7 @@ module.exports = merge(common, {
   devtool: false,
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/',
+    publicPath: '/react-template/',
     filename: 'js/[name].[contenthash].bundle.js',
   },
   module: {

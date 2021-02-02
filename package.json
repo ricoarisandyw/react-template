@@ -2,7 +2,7 @@
     "name": "my-webpack",
     "version": "0.1.0",
     "private": true,
-    "homepage": "react-template",
+    "homepage": "/react-template",
     "dependencies": {
         "@babel/runtime": "^7.12.5",
         "@types/react-redux": "^7.1.9",
