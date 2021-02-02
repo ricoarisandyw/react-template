@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
         <footer className="p-5 bg-dark text-light">
             <div className="row">
                 <div className="col-lg-4">
-                    <p><h3>Profile</h3></p>
+                    <h3>Profile</h3>
                     <ul className="list-unstyled text-small">
                         <li>Sidoarjo, Indonesia</li>
                         <li>+0812345678</li>
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div className="col-lg-4">
-                    <p><h3>Template</h3></p>
+                    <h3>Template</h3>
                     <ul className="list-unstyled text-small">
                         <li>Dashboard</li>
                         <li>E - commerce</li>
@@ -24,15 +24,15 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div className="col-lg-4">
-                    <p><h3>Send me message</h3></p>
+                    <h3>Send me message</h3>
                     <form>
                         <div>
                             <label>What should I call you?</label>
-                            <input className="form-control" />
+                            <input type="text" name="name" className="form-control" />
                         </div>
                         <div>
                             <label>What improvement you will share?</label>
-                            <input className="form-control" />
+                            <input type="text" name="description" className="form-control" />
                         </div>
                         <div className="pt-3">
                             <input type="submit" className="btn btn-success" />
